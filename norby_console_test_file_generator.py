@@ -14,181 +14,83 @@ Linking module (Модаль сопрядения) interface:
     ms set pointer <volume> <offset> - установка указателя чтения в томе памяти на заданный кадр (где \"volume\": iss, decor, flight_task_decor1, flight_task_decor2, decor_status, all)
 """
 
-import time
+from scr_gen_lib import *
+import os
 
-file_name = "norby_lm_test_script"
+try:
+    os.mkdir("Script")
+except OSError as error:
+    print(error)
 
-line_delay_ms = 3000
-delay_ms = 100
-
-reg_read_str = "reg get"
-reg_write_str = "reg write"
-reg_assert_str = "reg assert"
-
-ms_get_telemetry_str = "ms get telemetry"
-ms_get_status_str = "ms get status"
-ms_format_iss_str = "ms format iss"
-ms_format_decor_str = "ms format decor"
-ms_get_frames_str = "ms get frames"
-ms_set_pointer_str = "ms set pointer"
+file_name = "Script/norby_lm_test_script"
 
 
+def read_pl_mem_30_s():
+    script_string = ""
+    for j in range(2):
+        # чтение данных из памяти dcr
+        for m in range(8):
+            script_string += ms_get_frames("iss", 1)
+        # чтение данных из памяти iss
+        for m in range(12):
+            script_string += ms_get_frames("decor", 1)
+    return script_string
 
-def delay(value_ms):
+
+def read_pl_mem_1_min():
+    script_string = ""
+    for j in range(4):
+        # чтение данных из памяти dcr
+        for m in range(8):
+            script_string += ms_get_frames("iss", 1)
+        # чтение данных из памяти iss
+        for m in range(12):
+            script_string += ms_get_frames("decor", 1)
+    return script_string
+
+
+def lm_pl_iss_cyclogram_run(mode="single", c_num=1):
     """
-    Function sets delay strings to fill delay value
-    :param value_ms: delay in ms
-    :return: string set according to delay
+    Command to run PL_ISS cyclogrammas
+    :param mode: "single" - single run, "cyclic" - cyclic operation, "off" - pl switch off
+    :param c_num: number of cyclogram for "single" mode
+    :return: script strings
     """
-    script_str = ""
-    script_str += "\\!(Delay(%d))\n" % value_ms
-    return script_str
-
-
-def reg_write(dev_id, var_id, offset, length, value):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += reg_write_str
-    script_str += " " + "%d" % dev_id
-    script_str += " " + "%d" % var_id
-    script_str += " " + "%d" % offset
-    script_str += " " + "%d" % length
-    script_str += " " + ("%016X" % value)[-length*2:]
-    script_str += "\n"
-    return script_str
-
-
-def reg_write_string(dev_id, var_id, offset, length, value_str):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += reg_write_str
-    script_str += " " + "%d" % dev_id
-    script_str += " " + "%d" % var_id
-    script_str += " " + "%d" % offset
-    script_str += " " + "%d" % length
-    script_str += " " + value_str
-    script_str += "\n"
-    return script_str
-
-
-def reg_read(dev_id, var_id, offset, length):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += reg_read_str
-    script_str += " " + "%d" % dev_id
-    script_str += " " + "%d" % var_id
-    script_str += " " + "%d" % offset
-    script_str += " " + "%d" % length
-    script_str += "\n"
-    return script_str
-
-
-def reg_assert(dev_id, var_id, offset, length, vaalue_min, value_max):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += reg_assert_str
-    script_str += " " + "%d" % dev_id
-    script_str += " " + "%d" % var_id
-    script_str += " " + "%d" % offset
-    script_str += " " + "%d" % length
-    script_str += " " + "%d" % vaalue_min
-    script_str += " " + "%d" % value_max
-    script_str += "\n"
-    return script_str
-
-
-def ms_get_telemetry():
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_get_telemetry_str
-    script_str += "\n"
-    return script_str
-
-
-def norby_tmi_slice(tmi_list=None):
-    script_str = ""
-    for tmi_num in tmi_list:
-        script_str += "\\!(Delay(%d)) " % line_delay_ms
-        script_str += "tmi %d" % tmi_num
-        script_str += "\n"
-    return script_str
-
-
-def ms_get_status():
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_get_status_str
-    script_str += "\n"
-    return script_str
-
-
-def ms_format_iss():
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_format_iss_str
-    script_str += "\n"
-    return script_str
-
-
-def ms_format_decor():
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_format_decor_str
-    script_str += "\n"
-    return script_str
-
-
-def ms_get_frames(volume_str, frame_count):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_get_frames_str
-    _check_str_param(volume_str, "iss", "decor", "iss", "all", "flight_task_decor1", "flight_task_decor2",
-                     "decor_status", error="Wrong LM volume name")
-    script_str += " " + "%s" % volume_str
-    script_str += " " + "%d" % frame_count
-    if (frame_count - 1) != 0:
-        script_str += "\n\\!(Delay(%d)) " % (line_delay_ms*(frame_count - 1))
-    script_str += "\n"
-    return script_str
-
-
-def ms_set_pointer(volume_str, pointer_value):
-    script_str = "\\!(Delay(%d)) " % line_delay_ms
-    script_str += ms_set_pointer_str
-    _check_str_param(volume_str, "iss", "decor", "iss", "all", "flight_task_decor1", "flight_task_decor2",
-                     "decor_status", error="Wrong LM volume name")
-    script_str += " " + "%s" % volume_str + " %d" % pointer_value
-    script_str += "\n"
-    return script_str
-
-
-def ms_decor_set_fl_task(ft_num, step_number, cmd_type, cmd, delay_ms, repeat_cnter, data_list):
-    write_str_1 = "%02X" % cmd_type
-    write_str_1 += "%02X" % cmd
-    write_str_1 += "%08X" % delay_ms
-    write_str_1 += "%04X" % repeat_cnter
-    write_str_2 = ""
-    while len(data_list) < 8:
-        data_list.append(0)
-    write_str_2 += "".join([("%02X" % var) for var in data_list[:8]])
-    if ft_num == 1:
-        fl_task_offset = 128
+    script_string = ""
+    command_val = 0x0000
+    if mode is "single":
+        command_val = 0x0100 | (c_num & 0xFF)
+    elif mode is "cyclic":
+        command_val = 0x0200 | (0 & 0xFF)
+    elif mode is "off":
+        pass
     else:
-        fl_task_offset = 2176
-    script_str_1 = reg_write_string(6, 8, fl_task_offset + 16*step_number, 8, write_str_1)
-    script_str_2 = reg_write_string(6, 8, fl_task_offset + 8 + 16*step_number, 8, write_str_2)
-    return script_str_1 + script_str_2
+        raise(TypeError, "Wrong mode parameter")
+    script_string += reg_write(6, 4, 26, 2, command_val)
+    return script_string
 
 
-def brk_set_time(desired_time="2000_01_01 00:00:00"):
-    time_from_2000 = int(time.mktime(time.strptime(desired_time, "%Y_%m_%d %H:%M:%S")) - time.mktime(time.strptime("2000 01 01 00:00:00", "%Y %m %d %H:%M:%S")))
-    time_from_2000_plus_3 = time_from_2000 + 3
-    time_from_2000_reverce = (((time_from_2000 >> 24) & 0xFF) << 0) + (((time_from_2000 >> 16) & 0xFF) << 8) + (
-                ((time_from_2000 >> 8) & 0xFF) << 16) + (((time_from_2000 >> 0) & 0xFF) << 24)
-    time_from_2000_reverce_plus_3 = (((time_from_2000_plus_3 >> 24) & 0xFF) << 0) + (((time_from_2000_plus_3 >> 16) & 0xFF) << 8) + (
-            ((time_from_2000_plus_3 >> 8) & 0xFF) << 16) + (((time_from_2000_plus_3 >> 0) & 0xFF) << 24)
-    script_str_1 = reg_write(1, 4, 0, 4, time_from_2000_reverce)
-    script_str_2 = reg_write(2, 4, 0, 4, time_from_2000_reverce_plus_3)
-    return script_str_1 + script_str_2
-
-
-def _check_str_param(param, *arg, error="No one"):
-    for check_str in arg:
-        if param == check_str:
-            return
-    raise ValueError(error)
-    pass
+def lm_pl_decor_cyclogram_run(mode="single", ft_num=1):
+    """
+    Command to run PL_DeCoR flight task (ft)
+    :param mode: "single" - single run, "cyclic" - cyclic operation, "off" - pl switch off, "pause" - ft pause
+    :param ft_num: number of flight task  (1 - default, 2- ft_1, 3 - ft_2)
+    :return: script strings
+    """
+    script_string = ""
+    command_val = 0x00
+    if mode is "single":
+        command_val = 0x00 | (ft_num & 0x03)
+    elif mode is "cyclic":
+        command_val = 0x10 | (ft_num & 0x03)
+    elif mode is "off":
+        command_val = 0x00
+    elif mode is "pause":
+        command_val = 0x04
+    else:
+        raise(TypeError, "Wrong mode parameter")
+    script_string += reg_write(6, 4, 28, 1, command_val)
+    return script_string
 
 
 def file_write(file, string):
@@ -204,37 +106,34 @@ if __name__ == "__main__":
         file_write(test_file, ms_get_telemetry())
         # включение МС
         file_write(test_file, reg_write(3, 4, 34, 2, 0x0101))
-        # включение БРК в режим максимальной моности
-        file_write(test_file, reg_write(1, 2, 1, 1, 0x02))
-        file_write(test_file, reg_write(2, 2, 1, 1, 0x02))
-        # срез телеметрии
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-        # запуск МС и Декор
-        file_write(test_file, reg_write(6, 4, 26, 3, 0x010412))
         # срез телеметрии
         file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
         # телеметрия МС
         file_write(test_file, ms_get_telemetry())
-        for j in range(4):
-            # чтение данных из памяти декор
-            for i in range(16):
-                file_write(test_file, ms_get_frames("iss", 1))
-            for i in range(8):
-                file_write(test_file, ms_get_frames("decor", 1))
+        # запуск циклограммы 5
+        file_write(test_file, lm_pl_iss_cyclogram_run(mode="single", c_num=5))
+        # чтение на 6 минут
+        for i in range(4):
+            file_write(test_file, read_pl_mem_30_s())
             # срез телеметрии
             file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-        # запуск МС и Декор
-        file_write(test_file, reg_write(6, 4, 26, 2, 0x0105))
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-        # запуск МС и Декор
-        # телеметрия МС
-        file_write(test_file, ms_get_telemetry())
-        for j in range(4):
-            # чтение данных из памяти декор
-            for i in range(16):
-                file_write(test_file, ms_get_frames("iss", 1))
-            for i in range(8):
-                file_write(test_file, ms_get_frames("decor", 1))
+            # телеметрия МС
+            file_write(test_file, read_pl_mem_30_s())
             # срез телеметрии
             file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
+            # телеметрия МС
+            file_write(test_file, ms_get_telemetry())
+        # запуск циклограммы 3
+        file_write(test_file, lm_pl_iss_cyclogram_run(mode="single", c_num=3))
+        # чтение на 2 минут
+        for i in range(4):
+            file_write(test_file, read_pl_mem_30_s())
+            # срез телеметрии
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
+            # телеметрия МС
+            file_write(test_file, read_pl_mem_30_s())
+            # срез телеметрии
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
+            # телеметрия МС
+            file_write(test_file, ms_get_telemetry())
 
