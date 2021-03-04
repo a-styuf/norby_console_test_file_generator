@@ -1,2 +1,2 @@
-python set_time_to_brk_script.py "2000_01_01 00:00:10"
+python set_time_to_brk_script.py "2021_04_01 13:13:00"
 pause

@@ -22,17 +22,21 @@ try:
 except OSError as error:
     print(error)
 
-file_name = "Script/norby_lm_test_script"
+script_dir = "Script/"
+
+
+def set_script_name(name):
+    return script_dir + str(name)
 
 
 def read_pl_mem_30_s():
     script_string = ""
-    for j in range(2):
+    for j in range(1):
         # чтение данных из памяти dcr
-        for m in range(8):
+        for m in range(3):
             script_string += ms_get_frames("iss", 1)
         # чтение данных из памяти iss
-        for m in range(12):
+        for m in range(7):
             script_string += ms_get_frames("decor", 1)
     return script_string
 
@@ -58,11 +62,11 @@ def lm_pl_iss_cyclogram_run(mode="single", c_num=1):
     """
     script_string = ""
     command_val = 0x0000
-    if mode is "single":
+    if mode == "single":
         command_val = 0x0100 | (c_num & 0xFF)
-    elif mode is "cyclic":
+    elif mode == "cyclic":
         command_val = 0x0200 | (0 & 0xFF)
-    elif mode is "off":
+    elif mode == "off":
         pass
     else:
         raise(TypeError, "Wrong mode parameter")
@@ -79,18 +83,36 @@ def lm_pl_decor_cyclogram_run(mode="single", ft_num=1):
     """
     script_string = ""
     command_val = 0x00
-    if mode is "single":
+    if mode == "single":
         command_val = 0x00 | (ft_num & 0x03)
-    elif mode is "cyclic":
+    elif mode == "cyclic":
         command_val = 0x10 | (ft_num & 0x03)
-    elif mode is "off":
+    elif mode == "off":
         command_val = 0x00
-    elif mode is "pause":
+    elif mode == "pause":
         command_val = 0x04
     else:
         raise(TypeError, "Wrong mode parameter")
     script_string += reg_write(6, 4, 28, 1, command_val)
     return script_string
+
+
+def lm_power_ctrl(mode='on'):
+    """
+    Command for power control
+    :param mode: 'on' - power on, 'off' - power off
+    :return: script strings
+    """
+    if mode == 'on':
+        var = 0x0101
+    elif mode == 'off':
+        var = 0x0000
+    else:
+        raise(TypeError, "Wrong mode parameter")
+    script_string = ""
+    script_string += reg_write(3, 4, 34, 2, var & 0xFFFF)
+    return script_string
+    pass
 
 
 def file_write(file, string):
@@ -99,41 +121,16 @@ def file_write(file, string):
 
 
 if __name__ == "__main__":
-    with open(file_name + ".txt", "w") as test_file:
-        # срез телеметрии
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-        # телеметрия МС
+    file_name = "lm_pwr_on_iss_c5_dcr_cyclic_ft_5"
+    with open(set_script_name(file_name) + ".txt", "w") as test_file:
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        file_write(test_file, lm_power_ctrl(mode='on'))
+        file_write(test_file, norby_tmi_slice(tmi_list=[1]))
         file_write(test_file, ms_get_telemetry())
-        # включение МС
-        file_write(test_file, reg_write(3, 4, 34, 2, 0x0101))
-        # срез телеметрии
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-        # телеметрия МС
-        file_write(test_file, ms_get_telemetry())
-        # запуск циклограммы 5
-        file_write(test_file, lm_pl_iss_cyclogram_run(mode="single", c_num=5))
-        # чтение на 6 минут
-        for i in range(4):
-            file_write(test_file, read_pl_mem_30_s())
-            # срез телеметрии
-            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-            # телеметрия МС
-            file_write(test_file, read_pl_mem_30_s())
-            # срез телеметрии
-            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-            # телеметрия МС
+        #
+        file_write(test_file, lm_pl_decor_cyclogram_run(mode="cyclic", ft_num=2))
+        file_write(test_file, lm_pl_iss_cyclogram_run(mode='single', c_num=5))
+        for i in range(15):
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
             file_write(test_file, ms_get_telemetry())
-        # запуск циклограммы 3
-        file_write(test_file, lm_pl_iss_cyclogram_run(mode="single", c_num=3))
-        # чтение на 2 минут
-        for i in range(4):
             file_write(test_file, read_pl_mem_30_s())
-            # срез телеметрии
-            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-            # телеметрия МС
-            file_write(test_file, read_pl_mem_30_s())
-            # срез телеметрии
-            file_write(test_file, norby_tmi_slice(tmi_list=[1, 4, 7, 8]))
-            # телеметрия МС
-            file_write(test_file, ms_get_telemetry())
-
