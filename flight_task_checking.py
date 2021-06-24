@@ -8,6 +8,7 @@ time_start = time.perf_counter()
 # паттерн для поиска полетного задания на запсь
 rd_fl_t_pattern = re.compile(r"ms get frames flight_task_decor2 1\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) RAW data to send:[\s0-9A-F]{73}\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) Пакет успешно отправлен!\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) Received RAW data:( [0-9A-F]{2}){15} (([0-9A-F\s]{3}){128})")
 wr_fl_t_pattern = re.compile(r"reg write 6 8 ([0-9]{1,6}) 8 ([0-9A-F]{16})")
+ram_rd_fl_t_pattern = re.compile(r"reg get 6 8 ([0-9]{1,6}) 128\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) RAW data to send:[\s0-9A-F]{73}\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) Пакет успешно отправлен!\n\([0-9]{2}:[0-9]{2}:[0-9]{2}\) Received RAW data:( [0-9A-F]{2}){15} (([0-9A-F\s]{3}){128})")
 
 home_dir = os.getcwd()
 
@@ -15,6 +16,14 @@ try:
     os.mkdir("flight_task_data")
 except OSError as error:
     print(error)
+
+try:
+    os.chdir("flight_task_data")
+    os.mkdir("result")
+except OSError as error:
+    print(error)
+
+os.chdir(home_dir)
 
 
 def list_files_in_dir_and_subdir(work_path):
@@ -49,7 +58,9 @@ def get_time():
 file_num = 0
 rd_fl_t_result = []
 wr_fl_t_result = []
+ram_rd_fl_t_result = []
 tmp_wr_dict = {}
+tmp_ram_rd_dict = {}
 
 for num, file_path in enumerate(list_dir_and_file):
     if (".log" in file_path) or (".txt" in file_path):  # os.path.isfile(file_path):
@@ -76,13 +87,21 @@ for num, file_path in enumerate(list_dir_and_file):
                     str_with_space = ""
                     for i in range(0, len(str_tmp), 2):
                         str_with_space += str_tmp[0+i:2+i] + " "
-                    wr_fl_t_result.append(str_with_space)
-                    print(wr_fl_t_result[-1])
+                    wr_fl_t_result.append(str_with_space[:-1])
                     str_tmp = ""
                     k_old = 0
                 else:
                     str_tmp = v
                     k_old = k
+                pass
+        #
+        find_result = ram_rd_fl_t_pattern.findall(file_lines_str)
+        for sample in find_result:
+            tmp_ram_rd_dict[int(sample[0])] = sample[2]
+            for k, v in sorted(tmp_ram_rd_dict.items(), key=lambda item: item[0]):
+                print(k)
+                for i in range(8):
+                    ram_rd_fl_t_result.append(v[0+i*3*16:16*3-1+i*3*16])
                 pass
             #
         file_num += 1
@@ -92,13 +111,17 @@ for num, file_path in enumerate(list_dir_and_file):
         pass
 print(rd_fl_t_result)
 print(wr_fl_t_result)
+print(ram_rd_fl_t_result)
 
 # сортировка кадров по типам: актуальные, старые, из архива БДД
-with open("rd_result.txt", "w") as test_file:
+with open("flight_task_data\\result\\rd_result.txt", "w") as test_file:
     for notice in rd_fl_t_result:
         test_file.write("".join(notice)+"\n")
-with open("wr_result.txt", "w") as test_file:
+with open("flight_task_data\\result\\wr_result.txt", "w") as test_file:
     for notice in wr_fl_t_result:
+        test_file.write("".join(notice)+"\n")
+with open("flight_task_data\\result\\ram_rd_result.txt", "w") as test_file:
+    for notice in ram_rd_fl_t_result:
         test_file.write("".join(notice)+"\n")
 print("\nКоличество обработанных файлов: %d" % file_num)
 
