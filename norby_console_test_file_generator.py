@@ -121,16 +121,115 @@ def file_write(file, string):
 
 
 if __name__ == "__main__":
-    file_name = "lm_pwr_on_iss_c5_dcr_cyclic_ft_5"
+    # часть 1
+    file_name = "write_dcrft_2_use_rd_ptr_shift_part_1"
     with open(set_script_name(file_name) + ".txt", "w") as test_file:
         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-        file_write(test_file, lm_power_ctrl(mode='on'))
-        file_write(test_file, norby_tmi_slice(tmi_list=[1]))
-        file_write(test_file, ms_get_telemetry())
         #
-        file_write(test_file, lm_pl_decor_cyclogram_run(mode="cyclic", ft_num=2))
-        file_write(test_file, lm_pl_iss_cyclogram_run(mode='single', c_num=5))
-        for i in range(15):
+        file_write(test_file, lm_power_ctrl(mode='on'))
+        # инициализация памяти ДеКоР
+        file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
+        file_write(test_file, ms_format_decor())
+        for i in range(2):
+            # полетное задание 2 (штатная работа с вычиткой по 0xC1) ~1440 кадров в сутки
+            file_write(test_file, ms_decor_set_fl_task(2, 0, 1, 1, 5000, 0, [3, 0, 0, 0, 0, 0, 0, 0]))  # включение питания
+            file_write(test_file, ms_decor_set_fl_task(2, 1, 3, 0, 1000, 0, [0, 0, 0, 0, 0, 0, 0, 0]))  # синхронизация времени
+            file_write(test_file, ms_decor_set_fl_task(2, 2, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+            # 6 hours
+            offset = 0+3
+            for j in range(6):
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 0 + 2 * j, 8, 0, 36000, 99, [0, 0, 0, 0, 0, 0, 0, 0]))  # 3600s=1h fill
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 1 + 2 * j, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
             file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-            file_write(test_file, ms_get_telemetry())
-            file_write(test_file, read_pl_mem_30_s())
+            # 6 hours
+            offset = 12+3
+            for j in range(6):
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 0 + 2 * j, 8, 0, 36000, 99, [0, 0, 0, 0, 0, 0, 0, 0]))  # 3600s=1h fill
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 1 + 2 * j, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+            #
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        # чтение из оперативных данных
+        for i in range(10):
+            file_write(test_file, reg_read(dev_id=6, var_id=8, offset=128+2048+128*i, length=128))
+        #
+        for i in range(10):
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+    # часть 2
+    file_name = "write_dcrft_2_use_rd_ptr_shift_part_2"
+    with open(set_script_name(file_name) + ".txt", "w") as test_file:
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        #
+        file_write(test_file, lm_power_ctrl(mode='on'))
+        # инициализация памяти ДеКоР
+        file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
+        file_write(test_file, ms_format_decor())
+        for i in range(2):
+            # полетное задание 2 (штатная работа с вычиткой по 0xC1) ~1440 кадров в сутки
+            # 6 hours
+            offset = 24 + 3
+            for j in range(6):
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 0 + 2 * j, 8, 0, 36000, 99,
+                                                           [0, 0, 0, 0, 0, 0, 0, 0]))  # 3600s=1h fill
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 1 + 2 * j, 2, 1, 1000, 0,
+                                                           [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                            0x00]))  # ask status
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+            # 6 hours
+            offset = 36 + 3
+            for j in range(6):
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 0 + 2 * j, 8, 0, 36000, 99,
+                                                           [0, 0, 0, 0, 0, 0, 0, 0]))  # 3600s=1h fill
+                file_write(test_file, ms_decor_set_fl_task(2, offset + 1 + 2 * j, 2, 1, 1000, 0,
+                                                           [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                            0x00]))  # ask status
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+            #
+            offset = 48 + 3
+            for j in range(10):
+                file_write(test_file, ms_decor_set_fl_task(2, offset + j, 2, 1, 1000, 144,
+                                                           [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                            0x00]))  # 60 monitoring block period 1s
+            # 44 62 C8 69 00 00 69 00 00 3B 0D 0A
+            file_write(test_file,
+                       ms_decor_set_fl_task(2, 58, 2, 1, 1000, 0, [0x62, 0xC8, 0x69, 0x00, 0x00, 0x69, 0x00, 0x00]))
+            file_write(test_file, ms_decor_set_fl_task(2, 59, 0, 0, 0, 0,
+                                                       [0xDE, 0xAD, 0x00, 0x00, 0x00, 0x00, 0xDE, 0xAD]))  # empty
+            file_write(test_file, ms_decor_set_fl_task(2, 60, 0, 0, 0, 0,
+                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
+            file_write(test_file, ms_decor_set_fl_task(2, 61, 0, 0, 0, 0,
+                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
+            #
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+            #
+        # чтение из оперативных данных
+        for i in range(10):
+            file_write(test_file, reg_read(dev_id=6, var_id=8, offset=128 + 2048 + 128 * i, length=128))
+        #
+        for i in range(10):
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+    # часть 2
+    file_name = "write_dcrft_2_use_rd_ptr_shift_part_3"
+    with open(set_script_name(file_name) + ".txt", "w") as test_file:
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        #
+        file_write(test_file, lm_power_ctrl(mode='on'))
+        # инициализация памяти ДеКоР
+        file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
+        file_write(test_file, ms_format_decor())
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        for i in range(2):
+            # проверка записи полетного задания 1
+            file_write(test_file, ms_set_pointer("flight_task_decor2", 0))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+        #
+        for i in range(20):
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))

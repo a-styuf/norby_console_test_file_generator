@@ -252,7 +252,7 @@
 #         file_write(test_file, ms_decor_set_fl_task(1, 8, 2, 1, 1000, 0,
 #                                                    [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
 #         file_write(test_file, ms_decor_set_fl_task(1, 9, 2, 1, 1000, 99, [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00,
-#                                                                           0x00]))  # 100 monitoring block period 1s
+#                                                                           0x00]))  # 100 monitoring block period 1s24
 #         #
 #         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
 #         # полетное задание 2
@@ -361,3 +361,71 @@
 #         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
 #         file_write(test_file, ms_get_telemetry())
 #         file_write(test_file, read_pl_mem_30_s())
+
+# 2021_03_18
+# file_name = "lm_on_iss&dcr_cyclic"
+# with open(set_script_name(file_name) + ".txt", "w") as test_file:
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))  # 24 s
+#     file_write(test_file, ms_get_telemetry())  # 3
+#     file_write(test_file, lm_power_ctrl(mode='on'))  # 3
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))  # 24 s
+#     file_write(test_file, ms_get_telemetry())  # 3
+#     #
+#     file_write(test_file, lm_pl_decor_cyclogram_run(mode="cyclic", ft_num=2))  # 3
+#     file_write(test_file, lm_pl_iss_cyclogram_run(mode='cyclic', c_num=1))  # 3
+#     for i in range(10):
+#         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))  # 27
+#         file_write(test_file, ms_get_telemetry())  # 3
+#         file_write(test_file, read_pl_mem_30_s())  # 30
+
+# 2021_06_18
+# if __name__ == "__main__":
+#     file_name = "write_dcrft_1_change_period_of_dcr_polling_60_fr_per_hour"
+#     with open(set_script_name(file_name) + ".txt", "w") as test_file:
+#         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#         #
+#         file_write(test_file, lm_power_ctrl(mode='on'))
+#         # инициализация памяти ДеКоР
+#         file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
+#         file_write(test_file, ms_format_decor())
+#         for i in range(1):
+#             # полетное задание 1 (штатная работа с вычиткой 0xC1) ~1500 кадров в сутки
+#             file_write(test_file, ms_decor_set_fl_task(1, 0, 1, 1, 5000, 0, [3, 0, 0, 0, 0, 0, 0, 0]))  # включение питания
+#             file_write(test_file, ms_decor_set_fl_task(1, 1, 3, 0, 1000, 0, [0, 0, 0, 0, 0, 0, 0, 0]))  # синхронизация времени
+#             file_write(test_file, ms_decor_set_fl_task(1, 2, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#             file_write(test_file, ms_decor_set_fl_task(1, 3, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 4, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 5, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 6, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 7, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#             #
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#             #
+#             file_write(test_file, ms_decor_set_fl_task(1, 8, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 9, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 10, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 11, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 12, 8, 0, 25000, 15, [0, 0, 0, 0, 0, 0, 0, 0]))  # 400 s fill
+#             file_write(test_file, ms_decor_set_fl_task(1, 13, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#             file_write(test_file, ms_decor_set_fl_task(1, 14, 2, 1, 1000, 59, [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # 60 monitoring block period 1s
+#             file_write(test_file, ms_decor_set_fl_task(1, 15, 0, 0, 0, 0, [0xDE, 0xAD, 0x00, 0x00, 0x00, 0x00, 0xDE, 0xAD]))  # empty
+#             #
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#             #
+#         for i in range(2):
+#             # запись полетного задания 1
+#             file_write(test_file, reg_write(6, 2, 3, 1, 0x01))
+#             #
+#         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#         for i in range(4):
+#             # проверка записи полетного задания 1
+#             file_write(test_file, ms_set_pointer("flight_task_decor1", 0))
+#             file_write(test_file, ms_get_frames("flight_task_decor1", 1))
+#             file_write(test_file, ms_get_frames("flight_task_decor1", 1))
+#             file_write(test_file, ms_get_frames("flight_task_decor1", 1))
+#             file_write(test_file, ms_get_frames("flight_task_decor1", 1))
+#         file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#         # запуск полетного задания 1 одиночно
+#         file_write(test_file, lm_pl_iss_cyclogram_run(mode='single', c_num=5))
+#         for i in range(5):
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
