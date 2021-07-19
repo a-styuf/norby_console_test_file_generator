@@ -17,7 +17,7 @@ Linking module (Модаль сопрядения) interface:
 
 import time
 
-line_delay_ms = 3000
+line_delay_ms = 2200
 delay_ms = 100
 
 reg_read_str = "reg get"
@@ -169,8 +169,8 @@ def ms_decor_set_fl_task(ft_num, step_number, cmd_type, cmd, delay_ms, repeat_cn
     return script_str_1 + script_str_2
 
 
-def brk_set_time(desired_time="2000_01_01 00:00:00"):
-    time_from_2000 = int(time.mktime(time.strptime(desired_time, "%Y_%m_%d %H:%M:%S")) - time.mktime(time.strptime("2000 01 01 00:00:00", "%Y %m %d %H:%M:%S"))) + 3  # из-за задержки отправки
+def brk_set_time(desired_time="2000_01_01 00-00-00"):
+    time_from_2000 = int(time.mktime(time.strptime(desired_time, "%Y_%m_%d %H-%M-%S")) - time.mktime(time.strptime("2000 01 01 00-00-00", "%Y %m %d %H-%M-%S"))) + 3  # из-за задержки отправки
     time_from_2000_plus_3 = time_from_2000 + 3
     time_from_2000_reverce = (((time_from_2000 >> 24) & 0xFF) << 0) + (((time_from_2000 >> 16) & 0xFF) << 8) + (
                 ((time_from_2000 >> 8) & 0xFF) << 16) + (((time_from_2000 >> 0) & 0xFF) << 24)

@@ -1,0 +1,2 @@
+\!(Delay(3000)) reg write 1 4 0 4 8B057728
+\!(Delay(3000)) reg write 2 4 0 4 8E057728

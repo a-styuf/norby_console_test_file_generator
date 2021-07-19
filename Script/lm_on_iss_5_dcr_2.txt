@@ -1,0 +1,378 @@
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) reg write 3 4 34 2 0101
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) ms get telemetry
+\!(Delay(2200)) reg write 6 4 28 1 13
+\!(Delay(2200)) reg write 6 4 26 2 0105
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) ms get telemetry
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) ms get telemetry
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames iss 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) ms get frames decor 1
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) ms get telemetry

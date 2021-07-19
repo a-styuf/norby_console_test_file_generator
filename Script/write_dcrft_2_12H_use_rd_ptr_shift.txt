@@ -1,0 +1,189 @@
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) reg write 3 4 34 2 0101
+\!(Delay(2200)) reg write 6 4 28 1 00
+\!(Delay(2200)) ms format decor
+\!(Delay(2200)) reg write 6 8 2176 8 0101000013880000
+\!(Delay(2200)) reg write 6 8 2184 8 0300000000000000
+\!(Delay(2200)) reg write 6 8 2192 8 0300000003E80000
+\!(Delay(2200)) reg write 6 8 2200 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2208 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2216 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2224 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2232 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2240 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2248 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2256 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2264 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2272 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2280 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2288 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2296 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2304 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2312 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2320 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2328 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2336 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2344 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2352 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2360 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2368 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2376 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2384 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2392 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2400 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2408 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2416 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2424 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2432 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2440 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2448 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2456 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2464 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2472 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2480 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2488 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2496 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2504 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2512 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2520 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2528 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2536 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2544 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2552 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2560 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2568 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2576 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2584 8 62C8690000690000
+\!(Delay(2200)) reg write 6 8 2592 8 0000000075300000
+\!(Delay(2200)) reg write 6 8 2600 8 DEAD00000000DEAD
+\!(Delay(2200)) reg write 6 8 2608 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2616 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2624 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2632 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2640 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2648 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2656 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2664 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2672 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2680 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2176 8 0101000013880000
+\!(Delay(2200)) reg write 6 8 2184 8 0300000000000000
+\!(Delay(2200)) reg write 6 8 2192 8 0300000003E80000
+\!(Delay(2200)) reg write 6 8 2200 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2208 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2216 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2224 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2232 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2240 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2248 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2256 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2264 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2272 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2280 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2288 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2296 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2304 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2312 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2320 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2328 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2336 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2344 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2352 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2360 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2368 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2376 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2384 8 080000008CA000C7
+\!(Delay(2200)) reg write 6 8 2392 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2400 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2408 8 72C7000000000000
+\!(Delay(2200)) reg write 6 8 2416 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2424 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2432 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2440 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2448 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2456 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2464 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2472 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2480 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2488 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2496 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2504 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2512 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2520 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2528 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2536 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2544 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2552 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2560 8 0201000003E8018F
+\!(Delay(2200)) reg write 6 8 2568 8 72C1000000000000
+\!(Delay(2200)) reg write 6 8 2576 8 0201000003E80000
+\!(Delay(2200)) reg write 6 8 2584 8 62C8690000690000
+\!(Delay(2200)) reg write 6 8 2592 8 0000000075300000
+\!(Delay(2200)) reg write 6 8 2600 8 DEAD00000000DEAD
+\!(Delay(2200)) reg write 6 8 2608 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2616 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2624 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2632 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2640 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2648 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2656 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2664 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2672 8 0000000000000000
+\!(Delay(2200)) reg write 6 8 2680 8 0000000000000000
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) reg get 6 8 2176 128
+\!(Delay(2200)) reg get 6 8 2304 128
+\!(Delay(2200)) reg get 6 8 2432 128
+\!(Delay(2200)) reg get 6 8 2560 128
+\!(Delay(2200)) reg get 6 8 2688 128
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) reg write 6 2 4 1 01
+\!(Delay(2200)) ms set pointer flight_task_decor2 0
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8
+\!(Delay(2200)) ms set pointer flight_task_decor2 0
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) ms get frames flight_task_decor2 1
+\!(Delay(2200)) tmi 1
+\!(Delay(2200)) tmi 2
+\!(Delay(2200)) tmi 3
+\!(Delay(2200)) tmi 4
+\!(Delay(2200)) tmi 5
+\!(Delay(2200)) tmi 6
+\!(Delay(2200)) tmi 7
+\!(Delay(2200)) tmi 8

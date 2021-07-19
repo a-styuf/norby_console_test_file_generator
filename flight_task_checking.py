@@ -68,12 +68,12 @@ for num, file_path in enumerate(list_dir_and_file):
 
         file = open(file_path, "r", encoding='utf-8')
         file_lines_str = file.read()
-        #
+        # чтение из энергонезависимой памяти
         find_result = rd_fl_t_pattern.findall(file_lines_str)
         for sample in find_result:
             for i in range(8):
                 rd_fl_t_result.append(sample[1][0+i*3*16:16*3-1+i*3*16])
-        #
+        # запись регистров
         find_result = wr_fl_t_pattern.findall(file_lines_str)
         if find_result:
             #
@@ -88,18 +88,19 @@ for num, file_path in enumerate(list_dir_and_file):
                     for i in range(0, len(str_tmp), 2):
                         str_with_space += str_tmp[0+i:2+i] + " "
                     wr_fl_t_result.append(str_with_space[:-1])
+                    print(str_with_space[:-1])
                     str_tmp = ""
                     k_old = 0
                 else:
                     str_tmp = v
                     k_old = k
                 pass
-        #
+        # чтение из ОЗУ
         find_result = ram_rd_fl_t_pattern.findall(file_lines_str)
         for sample in find_result:
             tmp_ram_rd_dict[int(sample[0])] = sample[2]
             for k, v in sorted(tmp_ram_rd_dict.items(), key=lambda item: item[0]):
-                print(k)
+                # print(k)
                 for i in range(8):
                     ram_rd_fl_t_result.append(v[0+i*3*16:16*3-1+i*3*16])
                 pass
@@ -109,9 +110,9 @@ for num, file_path in enumerate(list_dir_and_file):
         # print("Обработка файла: ", file_path)
         # print("Файл - не файл!", "\n")
         pass
-print(rd_fl_t_result)
-print(wr_fl_t_result)
-print(ram_rd_fl_t_result)
+# print(rd_fl_t_result)
+# print(wr_fl_t_result)
+# print(ram_rd_fl_t_result)
 
 # сортировка кадров по типам: актуальные, старые, из архива БДД
 with open("flight_task_data\\result\\rd_result.txt", "w") as test_file:
