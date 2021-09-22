@@ -17,8 +17,8 @@ Linking module (Модаль сопрядения) interface:
 
 import time
 
-line_delay_ms = 2200
-delay_ms = 100
+line_delay_ms = 2500
+delay_ms = 400
 
 reg_read_str = "reg get"
 reg_write_str = "reg write"
@@ -30,6 +30,7 @@ ms_format_iss_str = "ms format iss"
 ms_format_decor_str = "ms format decor"
 ms_get_frames_str = "ms get frames"
 ms_set_pointer_str = "ms set pointer"
+set_brk_address_str = "set brk_address"
 
 
 def delay(value_ms):
@@ -104,6 +105,16 @@ def norby_tmi_slice(tmi_list=None):
         script_str += "\\!(Delay(%d)) " % line_delay_ms
         script_str += "tmi %d" % tmi_num
         script_str += "\n"
+    return script_str
+
+
+def set_brk_address(brk=1):
+    script_str = ''
+    script_str += "\\!(Delay(%d)) " % line_delay_ms
+    script_str += set_brk_address_str + " "
+    brk_ip_str = "10.6.1.201" if brk == 1 else "10.6.1.202"
+    script_str += brk_ip_str
+    script_str += "\n"
     return script_str
 
 

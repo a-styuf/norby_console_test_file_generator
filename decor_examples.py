@@ -565,3 +565,61 @@
 #             file_write(test_file, read_pl_mem(frame_num=100, mem_type="decor"))
 #             file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
 #             file_write(test_file, ms_get_telemetry())
+
+# 2020_08_23
+# file_name = "write_dcrft_2_2H_use_rd_ptr_shift"
+# with open(set_script_name(file_name) + ".txt", "w") as test_file:
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#     #
+#     file_write(test_file, lm_power_ctrl(mode='on'))
+#     # инициализация памяти ДеКоР
+#     file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
+#     file_write(test_file, ms_format_decor())
+#     #
+#     for i in range(3):
+#         # полетное задание 2 (штатная работа с вычиткой по 0xC1) 800 кадров в сутки
+#         file_write(test_file, ms_decor_set_fl_task(2, 0, 1, 1, 5000, 0, [3, 0, 0, 0, 0, 0, 0, 0]))  # включение питания
+#         file_write(test_file,
+#                    ms_decor_set_fl_task(2, 1, 3, 0, 1000, 0, [0, 0, 0, 0, 0, 0, 0, 0]))  # синхронизация времени
+#         file_write(test_file, ms_decor_set_fl_task(2, 2, 2, 1, 1000, 0,
+#                                                    [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#         # 1 hours
+#         file_write(test_file, ms_decor_set_fl_task(2, 3, 8, 0, 36000, 99, [0, 0, 0, 0, 0, 0, 0, 0]))  # 1h fill
+#         file_write(test_file, ms_decor_set_fl_task(2, 4, 2, 1, 1000, 0,
+#                                                    [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#         # вычитка 100 кадров
+#         file_write(test_file, ms_decor_set_fl_task(2, 5, 2, 1, 1000, 99, [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00,
+#                                                                           0x00]))  # 100 monitoring block period 1s
+#         # 1 hours
+#         file_write(test_file, ms_decor_set_fl_task(2, 6, 8, 0, 36000, 99, [0, 0, 0, 0, 0, 0, 0, 0]))  # 1h fill
+#         file_write(test_file, ms_decor_set_fl_task(2, 7, 2, 1, 1000, 0,
+#                                                    [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
+#         # вычитка 100 кадров
+#         file_write(test_file, ms_decor_set_fl_task(2, 8, 2, 1, 1000, 99, [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00,
+#                                                                           0x00]))  # 100 monitoring block period 1s
+#         # сдвиг времени в будущее
+#         file_write(test_file,
+#                    ms_decor_set_fl_task(2, 9, 2, 1, 1000, 0, [0x62, 0xC8, 0x69, 0x00, 0x00, 0x69, 0x00, 0x00]))
+#         #
+#         file_write(test_file, ms_decor_set_fl_task(2, 10, 0, 0, 30000, 0,
+#                                                    [0xDE, 0xAD, 0x00, 0x00, 0x00, 0x00, 0xDE, 0xAD]))  # empty
+#         for j in range(5):
+#             file_write(test_file, ms_decor_set_fl_task(2, 11 + j, 0, 0, 0, 0, [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
+#         #
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#     # чтение из оперативных данных
+#     for i in range(5):
+#         file_write(test_file, reg_read(dev_id=6, var_id=8, offset=128 + 2048 + 128 * i, length=128))
+#     #
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#     # запись полетного задания в ПЗУ
+#     file_write(test_file, reg_write(6, 2, 4, 1, 0x01))
+#     #
+#     for i in range(5):
+#         # проверка записи полетного задания 1
+#         file_write(test_file, ms_set_pointer("flight_task_decor2", 0))
+#         file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+#         file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+#         file_write(test_file, ms_get_frames("flight_task_decor2", 1))
+#     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
+#     #

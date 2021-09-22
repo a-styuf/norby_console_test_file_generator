@@ -134,67 +134,14 @@ def file_write(file, string):
 
 
 if __name__ == "__main__":
-    # часть 1
-    file_name = "write_dcrft_2_12H_use_rd_ptr_shift"
+    file_name = "brk_link_test_by_gorev"
     with open(set_script_name(file_name) + ".txt", "w") as test_file:
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-        #
-        file_write(test_file, lm_power_ctrl(mode='on'))
-        # инициализация памяти ДеКоР
-        file_write(test_file, lm_pl_decor_cyclogram_run(mode='off'))
-        file_write(test_file, ms_format_decor())
-        #
-        for i in range(2):  # single iteration is about 71 s
-            # полетное задание 2 (штатная работа с вычиткой по 0xC1) 800 кадров в сутки
-            file_write(test_file, ms_decor_set_fl_task(2, 0, 1, 1, 5000, 0, [3, 0, 0, 0, 0, 0, 0, 0]))  # включение питания
-            file_write(test_file, ms_decor_set_fl_task(2, 1, 3, 0, 1000, 0, [0, 0, 0, 0, 0, 0, 0, 0]))  # синхронизация времени
-            file_write(test_file, ms_decor_set_fl_task(2, 2, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
-            # 12 hours
-            offset = 0+3
-            for j in range(6):
-                file_write(test_file, ms_decor_set_fl_task(2, offset + 0 + 2 * j, 8, 0, 36000, 199, [0, 0, 0, 0, 0, 0, 0, 0]))  # 7200s=2h fill
-                file_write(test_file, ms_decor_set_fl_task(2, offset + 1 + 2 * j, 2, 1, 1000, 0, [0x72, 0xC7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]))  # ask status
-            offset = 12 + 3
-            # вычитка 400 кадров
-            for j in range(10):
-                file_write(test_file, ms_decor_set_fl_task(2, offset + j, 2, 1, 1000, 399,
-                                                           [0x72, 0xC1, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                                            0x00]))  # 60 monitoring block period 1s
-            # сдвиг времени в будущее
-            offset = 22 + 3
-            file_write(test_file,
-                       ms_decor_set_fl_task(2, offset, 2, 1, 1000, 0, [0x62, 0xC8, 0x69, 0x00, 0x00, 0x69, 0x00, 0x00]))
-            #
-            file_write(test_file, ms_decor_set_fl_task(2, 26, 0, 0, 30000, 0,
-                                                       [0xDE, 0xAD, 0x00, 0x00, 0x00, 0x00, 0xDE, 0xAD]))  # empty
-            file_write(test_file, ms_decor_set_fl_task(2, 27, 0, 0, 0, 0,
-                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
-            file_write(test_file, ms_decor_set_fl_task(2, 28, 0, 0, 0, 0,
-                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
-            file_write(test_file, ms_decor_set_fl_task(2, 29, 0, 0, 0, 0,
-                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
-            file_write(test_file, ms_decor_set_fl_task(2, 30, 0, 0, 0, 0,
-                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
-            file_write(test_file, ms_decor_set_fl_task(2, 31, 0, 0, 0, 0,
-                                                       [0, 0, 0, 0, 0, 0, 0, 0]))  # empty
-            #
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-        # чтение из оперативных данных
-        for i in range(5):
-            file_write(test_file, reg_read(dev_id=6, var_id=8, offset=128+2048+128*i, length=128))
-        #
-        file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-        # запись полетного задания в ПЗУ
-        file_write(test_file, reg_write(6, 2, 4, 1, 0x01))
-        #
-        for i in range(2):
-            # проверка записи полетного задания 1
-            file_write(test_file, ms_set_pointer("flight_task_decor2", 0))
-            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
-            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
-            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
-            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
-            file_write(test_file, ms_get_frames("flight_task_decor2", 1))
-            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
-        #
+        for j in range(12):
+            file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))  # 17.6 s
+            for i in range(28):  # 4.4 * 28 s
+                file_write(test_file, set_brk_address(brk=i % 2 + 1))  # 2.2 s
+                #
+                file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.2 s
+                #
+
 
