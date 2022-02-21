@@ -623,3 +623,47 @@
 #         file_write(test_file, ms_get_frames("flight_task_decor2", 1))
 #     file_write(test_file, norby_tmi_slice(tmi_list=[1, 2, 3, 4, 5, 6, 7, 8]))
 #     #
+
+# if __name__ == "__main__":
+#     file_name = "gorev_test_lm_pwr_off_and_on_and_tmi_polling"
+#     with open(set_script_name(file_name) + ".txt", "w") as test_file:
+#         file_write(test_file, reg_write(3, 4, 28, 2, 0x0000))  # 2.5s  # Отключение СОП
+#         file_write(test_file, reg_write(3, 4, 28, 2, 0x0000))  # 2.5s  # Отключение СОП
+#         for i in range(24):  # 240 s = 4 min
+#             file_write(test_file, reg_write(3, 4, 34, 2, 0x0000))  # 2.5s  # Отключение МС
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#             file_write(test_file, ms_get_telemetry())  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#         #
+#         file_write(test_file, reg_write(3, 4, 34, 2, 0x0101))  # 2.5s  # Отключение МС
+#         file_write(test_file, ms_get_telemetry())  # 2.5s
+#         file_write(test_file, ms_get_telemetry())  # 2.5s
+#         file_write(test_file, lm_pl_decor_cyclogram_run(mode="cyclic", ft_num=1))
+#         file_write(test_file, lm_pl_iss_cyclogram_run(mode='single', c_num=5))
+#         #
+#         for i in range(24):  # 240 s = 4 min
+#             file_write(test_file, reg_write(3, 4, 34, 2, 0x0101))  # 2.5s  # Отключение МС
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#             file_write(test_file, ms_get_telemetry())  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#         #
+#         file_write(test_file, reg_write(3, 4, 34, 2, 0x0000))  # 2.5s  # Отключение МС
+#         file_write(test_file, reg_write(3, 4, 34, 2, 0x0000))  # 2.5s  # Отключение МС
+
+# if __name__ == "__main__":
+#     file_name = "gorev_test_sop_pwr_off_and_on_and_tmi_polling"
+#     with open(set_script_name(file_name) + ".txt", "w") as test_file:
+#         for i in range(24):  # 240 s = 4 min
+#             file_write(test_file, reg_write(3, 4, 34, 2, 0x0000))  # 2.5s  # Отключение МС
+#             file_write(test_file, reg_write(3, 4, 28, 2, 0x0000))  # 2.5s  # Отключение
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#         #
+#         for i in range(24):  # 240 s = 4 min
+#             file_write(test_file, reg_write(3, 4, 28, 1, 0x01))  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#             file_write(test_file, norby_tmi_slice(tmi_list=[1]))  # 2.5s
+#         #
+#         file_write(test_file, reg_write(3, 4, 28, 2, 0x0000))  # 2.5s  # Отключение
+#         file_write(test_file, reg_write(3, 4, 34, 2, 0x0000))  # 2.5s  # Отключение МС

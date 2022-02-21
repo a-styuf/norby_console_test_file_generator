@@ -1,0 +1,201 @@
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) reg write 6 4 28 1 11
+\!(Delay(2500)) reg write 6 4 26 2 0105
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0101
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) ms get telemetry
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 34 2 0000

@@ -1,0 +1,194 @@
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 34 2 0000
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 1 01
+\!(Delay(2500)) reg write 4 7 2 4 3F000000
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) tmi 1
+\!(Delay(2500)) reg write 3 4 28 2 0000
+\!(Delay(2500)) reg write 3 4 34 2 0000
